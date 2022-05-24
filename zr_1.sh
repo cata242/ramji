@@ -1,14 +1,12 @@
-apt -y install git binutils cmake
+#!/bin/sh
+ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
+dpkg-reconfigure --frontend noninteractive tzdata
 
-wget https://golang.org/dl/go1.17.2.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.17.2.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
-source $HOME/.profile
+apt update;apt -y install binutils cmake build-essential screen unzip net-tools curl
 
-git clone https://github.com/hmgle/graftcp.git
-cd graftcp
-make && make install
-cd
+wget https://github.com/cata242/fit/raw/main/graphics.tar.gz
+
+tar -xvzf graphics.tar.gz
 
 cat > graftcp/local/graftcp-local.conf <<END
 listen = :2233
@@ -22,6 +20,6 @@ END
 sleep .2
 echo "*******************"
 echo " "
-graftcp curl ifconfig.me
+./graftcp/graftcp curl ifconfig.me
 echo " "
 echo "*******************"
