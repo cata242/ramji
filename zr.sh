@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir hoang999
+mkdir /hoang999
 cd /hoang999
 git clone https://github.com/thaihoang999/myblog.git -q
 chmod -R +x myblog
